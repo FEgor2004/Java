@@ -19,6 +19,7 @@ public class mainWindow extends javax.swing.JFrame {
     String firstS = "";
     String secondS = "";
     char deyst;
+    double result;
  
     
     /**
@@ -59,9 +60,11 @@ public class mainWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
 
-        jTextField1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
 
-        jButton3.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton3.setBackground(java.awt.Color.lightGray);
+        jButton3.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(85, 103, 248));
         jButton3.setText("9");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +72,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton4.setBackground(java.awt.Color.lightGray);
+        jButton4.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(85, 103, 248));
         jButton4.setText("8");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +82,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton5.setBackground(java.awt.Color.lightGray);
+        jButton5.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(85, 103, 248));
         jButton5.setText("7");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +92,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton6.setBackground(java.awt.Color.lightGray);
+        jButton6.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(85, 103, 248));
         jButton6.setText("4");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +102,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton7.setBackground(java.awt.Color.lightGray);
+        jButton7.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(85, 103, 248));
         jButton7.setText("5");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +112,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton8.setBackground(java.awt.Color.lightGray);
+        jButton8.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(85, 103, 248));
         jButton8.setText("6");
         jButton8.setToolTipText("");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +123,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton9.setBackground(java.awt.Color.lightGray);
+        jButton9.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(85, 103, 248));
         jButton9.setText("3");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +133,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton10.setBackground(java.awt.Color.lightGray);
+        jButton10.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(85, 103, 248));
         jButton10.setText("1");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +143,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton11.setBackground(java.awt.Color.lightGray);
+        jButton11.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(85, 103, 248));
         jButton11.setText("2");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +153,9 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton12.setBackground(java.awt.Color.lightGray);
+        jButton12.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(85, 103, 248));
         jButton12.setText("0");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +164,7 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jButton13.setBackground(java.awt.Color.gray);
-        jButton13.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton13.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton13.setForeground(new java.awt.Color(254, 254, 254));
         jButton13.setText("+");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +174,7 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jButton14.setBackground(new java.awt.Color(76, 76, 76));
-        jButton14.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton14.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton14.setForeground(new java.awt.Color(254, 254, 254));
         jButton14.setText("-");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +184,7 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jButton15.setBackground(java.awt.Color.gray);
-        jButton15.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton15.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton15.setForeground(new java.awt.Color(254, 254, 254));
         jButton15.setText("*");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +194,7 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jButton16.setBackground(java.awt.Color.gray);
-        jButton16.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton16.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton16.setForeground(new java.awt.Color(254, 254, 254));
         jButton16.setText("/");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +204,7 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jButton17.setBackground(new java.awt.Color(255, 0, 0));
-        jButton17.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton17.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton17.setForeground(new java.awt.Color(254, 254, 254));
         jButton17.setText("C");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -192,8 +213,8 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton18.setBackground(new java.awt.Color(2, 184, 225));
-        jButton18.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton18.setBackground(new java.awt.Color(1, 117, 143));
+        jButton18.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton18.setForeground(new java.awt.Color(254, 254, 254));
         jButton18.setText("=");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +224,7 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jButton19.setBackground(java.awt.Color.gray);
-        jButton19.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jButton19.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jButton19.setForeground(new java.awt.Color(254, 254, 254));
         jButton19.setText(".");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -321,14 +342,18 @@ public class mainWindow extends javax.swing.JFrame {
             first = Double.parseDouble(firstS);
             second = Double.parseDouble(secondS);            
         
-        if(deyst=='+') jTextField1.setText("" + (first+second));
-        if(deyst=='-') jTextField1.setText((first-second) + "");
-        if(deyst=='*') jTextField1.setText((first*second) + "");
+        if(deyst=='+') result=first+second;
+        if(deyst=='-') result=first-second;
+        if(deyst=='*') result=first*second;
         if(deyst=='/') {
             if(second==0) jTextField1.setText("Error");
-            else jTextField1.setText(first/second + "");
+            else result=first/second;
             }
-        } 
+        jTextField1.setText(result + "");
+        firstS = result+"";
+        secondS="";
+        }
+        
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
