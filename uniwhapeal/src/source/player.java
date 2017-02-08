@@ -37,13 +37,13 @@ public class player {
     }
     
     public void loadFighterImg(int fighterId) throws IOException {
-        if(fighterId == 1 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/unicorn.png"));
+        if(fighterId == 1 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/unicorn1.png"));
         if(fighterId == 1 && !isleft) fighterImg = ImageIO.read(new File("./src/source/img/unicorn1.png"));
-        if(fighterId == 2 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/ufo.png"));
+        if(fighterId == 2 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/ufo1.png"));
         if(fighterId == 2 && !isleft) fighterImg = ImageIO.read(new File("./src/source/img/ufo1.png"));
-        if(fighterId == 3 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/penguin.png"));
+        if(fighterId == 3 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/penguin1.png"));
         if(fighterId == 3 && !isleft) fighterImg = ImageIO.read(new File("./src/source/img/penguin1.png"));
-        if(fighterId == 4 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/whale.png"));
+        if(fighterId == 4 && isleft) fighterImg = ImageIO.read(new File("./src/source/img/whale1.png"));
         if(fighterId == 4 && !isleft) fighterImg = ImageIO.read(new File("./src/source/img/whale1.png"));
     }
     public void drawPlayer(Graphics gr) {

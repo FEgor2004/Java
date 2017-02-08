@@ -32,6 +32,10 @@ public class choosepersonage extends javax.swing.JFrame {
     public void player1IsReady(int fighterId) throws IOException {
         player1Ready = true;
         player1fighterId = fighterId;
+        jButton1.enable(false);
+        jButton2.enable(false);
+        jButton3.enable(false);
+        jButton4.enable(false);
         jLabel3.setBounds(500, 200, 200, 100);
         jLabel3.setText("    READY");
         jLabel3.setHorizontalAlignment(JLabel.CENTER);
@@ -164,13 +168,13 @@ public class choosepersonage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))
-                        .addGap(18, 18, 18)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                 .addComponent(jButton5))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton4)
