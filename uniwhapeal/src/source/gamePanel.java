@@ -29,6 +29,6 @@ public class gamePanel extends javax.swing.JPanel {
     }
     public void paintComponent(Graphics gr) {
         gr.drawString("ЭТО ГОВНО ДОЛЖНО РАБОТАТЬ", 100, 100);
-        gr.drawImage(bg, 0, 0, this);
+        gr.drawImage(bg, -200, -200, this);
     }
 }
