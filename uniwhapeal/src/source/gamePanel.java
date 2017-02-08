@@ -17,18 +17,25 @@ import javax.imageio.ImageIO;
  */
 public class gamePanel extends javax.swing.JPanel {
     
-    Image bg;
+    private Image bg;
+
+    public player firstPlayer;
+    public player secondPlayer;
     
-    public gamePanel() {
+    public gamePanel(int firstPlayerFighterId, int secondPlayerFighterId) throws IOException {
         try {
             bg = ImageIO.read(new File("./src/source/img/bg.jpg"));
         }
         catch(IOException ioexp) {
         System.out.println(ioexp);
         }
+        firstPlayer = new player(firstPlayerFighterId, true);
+        secondPlayer = new player(secondPlayerFighterId, false);
     }
     public void paintComponent(Graphics gr) {
         gr.drawString("ЭТО ГОВНО ДОЛЖНО РАБОТАТЬ", 100, 100);
-        gr.drawImage(bg, -200, -200, this);
+        gr.drawImage(bg, -400, -400, this);
+       firstPlayer.drawPlayer(gr);
+       secondPlayer.drawPlayer(gr);
     }
 }

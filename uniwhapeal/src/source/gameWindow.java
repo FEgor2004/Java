@@ -6,6 +6,7 @@
 package source;
 
 import java.awt.Container;
+import java.io.IOException;
 
 
 /**
@@ -14,12 +15,12 @@ import java.awt.Container;
  */
 public class gameWindow extends javax.swing.JFrame {
     gamePanel myPanel;
-    public gameWindow(int firstPlayerId, int secondPlayerId) {
+    public gameWindow(int firstPlayerId, int secondPlayerId) throws IOException {
             setBounds(0, 0, 800, 600);
             setResizable(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             setVisible(true);
-            myPanel = new gamePanel();
+            myPanel = new gamePanel(firstPlayerId, secondPlayerId);
             Container cont = getContentPane();
             cont.add(myPanel);
     }

@@ -6,8 +6,10 @@
 package source;
 
 import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 /**
  *
@@ -22,12 +24,12 @@ public class choosepersonage extends javax.swing.JFrame {
     int player1fighterId;
     int player2fighterId;
     
-    public void startGame(int player1fighterId, int player2fighterId) {
+    public void startGame(int player1fighterId, int player2fighterId) throws IOException {
         gameWindow game = new gameWindow(player1fighterId, player2fighterId);
         this.setVisible(false);
     }
     
-    public void player1IsReady(int fighterId) {
+    public void player1IsReady(int fighterId) throws IOException {
         player1Ready = true;
         player1fighterId = fighterId;
         jLabel3.setBounds(500, 200, 200, 100);
@@ -38,7 +40,7 @@ public class choosepersonage extends javax.swing.JFrame {
             startGame(player1fighterId, player2fighterId);
         }
     }
-    public void player2IsReady(int fighterId) {
+    public void player2IsReady(int fighterId) throws IOException {
         player2Ready = true;
         jLabel2.setHorizontalAlignment(JLabel.CENTER);
         jLabel2.setText("    READY");
@@ -77,7 +79,6 @@ public class choosepersonage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1400, 640));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Waree", 1, 36)); // NOI18N
@@ -162,26 +163,25 @@ public class choosepersonage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                                .addComponent(jButton6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
                                 .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addComponent(jButton5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton5)))
+                                .addComponent(jButton6)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton7)
                             .addComponent(jButton8))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(469, 469, 469))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -202,16 +202,24 @@ public class choosepersonage extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6)
-                    .addComponent(jButton8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton7)
+                            .addComponent(jButton3)
+                            .addComponent(jButton5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton6)
+                                    .addComponent(jButton8)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jButton4))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
                 .addContainerGap())
         );
 
@@ -219,43 +227,75 @@ public class choosepersonage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        player1IsReady(1);
+        try {
+            // TODO add your handling code here:
+            player1IsReady(1);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        player1IsReady(2);
+        try {
+            // TODO add your handling code here:
+            player1IsReady(2);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        player1IsReady(3);
+        try {
+            // TODO add your handling code here:
+            player1IsReady(3);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        player1IsReady(4);
+        try {
+            // TODO add your handling code here:
+            player1IsReady(4);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        player2IsReady(3);
+        try {
+            // TODO add your handling code here:
+            player2IsReady(3);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        player2IsReady(1);
+        try {
+            // TODO add your handling code here:
+            player2IsReady(1);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        player2IsReady(4);
+        try {
+            // TODO add your handling code here:
+            player2IsReady(4);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        player2IsReady(2);
+        try {
+            // TODO add your handling code here:
+            player2IsReady(2);
+        } catch (IOException ex) {
+            Logger.getLogger(choosepersonage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
