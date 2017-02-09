@@ -18,7 +18,7 @@ import java.io.IOException;
 public class gameWindow extends javax.swing.JFrame {
     gamePanel myPanel;
     
-    private class Key implements KeyListener {
+    private class UpDownKeyListener implements KeyListener {
 
         @Override
         public void keyTyped(KeyEvent e) {}
@@ -35,16 +35,7 @@ public class gameWindow extends javax.swing.JFrame {
                     myPanel.secondPlayer.y = myPanel.secondPlayer.y-5;
                 }
             }
-            if(keyCode==37) {
-                if(myPanel.secondPlayer.x>500) {
-                    myPanel.secondPlayer.x = myPanel.secondPlayer.x-5;
-                }
-            }
-            if(keyCode==39) {
-                if(myPanel.secondPlayer.x<700) {
-                    myPanel.secondPlayer.x= myPanel.secondPlayer.x+5;
-                }
-            }
+
             
             
             if(keyCode==83) {
@@ -57,6 +48,19 @@ public class gameWindow extends javax.swing.JFrame {
                     myPanel.firstPlayer.y = myPanel.firstPlayer.y-5;
                 }
             }
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {}
+        
+    }
+    
+    private class LeftRightKeyListener implements KeyListener {
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            int keyCode = e.getKeyCode();
             if(keyCode==65) {
                 if(myPanel.firstPlayer.x>0) {
                     myPanel.firstPlayer.x = myPanel.firstPlayer.x-5;
@@ -67,15 +71,73 @@ public class gameWindow extends javax.swing.JFrame {
                     myPanel.firstPlayer.x= myPanel.firstPlayer.x+5;
                 }
             }
+            if(keyCode==37) {
+                if(myPanel.secondPlayer.x>500) {
+                    myPanel.secondPlayer.x = myPanel.secondPlayer.x-5;
+                }
+            }
+            if(keyCode==39) {
+                if(myPanel.secondPlayer.x<700) {
+                    myPanel.secondPlayer.x= myPanel.secondPlayer.x+5;
+                }
+            }
         }
 
         @Override
-        public void keyReleased(KeyEvent e) {}
+        public void keyPressed(KeyEvent e) {
+            int keyCode = e.getKeyCode();
+            if(keyCode==65) {
+                if(myPanel.firstPlayer.x>0) {
+                    myPanel.firstPlayer.x = myPanel.firstPlayer.x-5;
+                }
+            }
+            if(keyCode==68) {
+                if(myPanel.firstPlayer.x<400) {
+                    myPanel.firstPlayer.x= myPanel.firstPlayer.x+5;
+                }
+            }
+            if(keyCode==37) {
+                if(myPanel.secondPlayer.x>500) {
+                    myPanel.secondPlayer.x = myPanel.secondPlayer.x-5;
+                }
+            }
+            if(keyCode==39) {
+                if(myPanel.secondPlayer.x<700) {
+                    myPanel.secondPlayer.x= myPanel.secondPlayer.x+5;
+                }
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            int keyCode = e.getKeyCode();
+            if(keyCode==65) {
+                if(myPanel.firstPlayer.x>0) {
+                    myPanel.firstPlayer.x = myPanel.firstPlayer.x-5;
+                }
+            }
+            if(keyCode==68) {
+                if(myPanel.firstPlayer.x<400) {
+                    myPanel.firstPlayer.x= myPanel.firstPlayer.x+5;
+                }
+            }
+            if(keyCode==37) {
+                if(myPanel.secondPlayer.x>500) {
+                    myPanel.secondPlayer.x = myPanel.secondPlayer.x-5;
+                }
+            }
+            if(keyCode==39) {
+                if(myPanel.secondPlayer.x<700) {
+                    myPanel.secondPlayer.x= myPanel.secondPlayer.x+5;
+                }
+            }
+        }
         
     }
     
     public gameWindow(int firstPlayerId, int secondPlayerId) throws IOException {
-            this.addKeyListener(new Key());
+            this.addKeyListener(new LeftRightKeyListener());
+            this.addKeyListener(new UpDownKeyListener());
             setBounds(0, 0, 1000, 600);
             setResizable(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
